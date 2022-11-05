@@ -97,10 +97,15 @@ public class TestSuite extends DBTestCase {
     @Test
     public void testAdvancedQuery() throws SQLException {
 
-        String result = "";
+        //Variable to store the result after querying
+        Integer result = 0;
+
+        //Parameters for the query, because the is no sensitive information
+        //  => there is no need to use binding parameter technique
         String thisYear = Year.now().toString();
         final int maxLeaveDayLength = 12;
 
+        //JDBC's statement to query
         Statement statement = connection.createStatement();
 
         String sql =
@@ -117,13 +122,22 @@ public class TestSuite extends DBTestCase {
                             "GROUP BY e1.emp_number " +
                             "HAVING SUM(l1.length_days) > " + maxLeaveDayLength + " " +
                         ") as temp ";
-        ResultSet rs = statement.executeQuery(sql);
 
+        long start = System.currentTimeMillis();
+        ResultSet rs = statement.executeQuery(sql);
+        long end = System.currentTimeMillis();
+
+        //Parse the answer to the result variable
         while (rs.next()) {
-            result = rs.getString(1);
+            result = rs.getInt(1);
         }
+
+        //clear the resource after using
         rs.close();
 
+        //Output the result
         System.out.println("Number of employees who leave more than 12 days in this year: " + result);
+        System.out.println("Execution time: "+ (end-start) + "ms");
+
     }
 }
