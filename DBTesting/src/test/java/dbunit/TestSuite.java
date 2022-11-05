@@ -11,14 +11,14 @@ import org.junit.Test;
 
 import java.io.FileInputStream;
 import java.sql.*;
+import java.time.Year;
 
 public class TestSuite extends DBTestCase {
 
     public static final String DATASET_PATH = "dataset.xml";
 
-    //SQL stuffs
+    //Database connection
     private Connection connection;
-    private Statement statement;
 
     //Database configuration
     private static final int BATCH_SIZE = 97;
@@ -27,7 +27,7 @@ public class TestSuite extends DBTestCase {
     private static final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
     private static final String IP = "127.0.0.1";                   //editable
     private static final String PORT = "3306";                      //editable
-    private static final String SCHEMA_NAME = "orangehrm_mysql";    //editable
+    private static final String SCHEMA_NAME = "orangehrm_test";    //editable
 
     private static final String CONNECTION_STR = "jdbc:mysql://" + IP + ":" + PORT + "/" + SCHEMA_NAME + "?useSSL=false";
     private static final String USERNAME = "root";  //editable
@@ -80,10 +80,10 @@ public class TestSuite extends DBTestCase {
     public void testBasicQuery() throws SQLException {
 
         String actual = "";
-        String expected = "abc";
+        String expected = "admin";
 
-        statement = connection.createStatement();
-        String sql = "SELECT user_name FROM ohrm_login WHERE id = '12'";
+        Statement statement = connection.createStatement();
+        String sql = "SELECT user_name FROM ohrm_user WHERE id = '1'";
         ResultSet rs = statement.executeQuery(sql);
 
         while (rs.next()) {
@@ -91,8 +91,39 @@ public class TestSuite extends DBTestCase {
         }
         rs.close();
 
-        System.out.println("Actual: " + actual + "\r\n" + "Expected: " + expected);
         assertEquals(actual, expected);
-        System.out.println("Passed");
+    }
+
+    @Test
+    public void testAdvancedQuery() throws SQLException {
+
+        String result = "";
+        String thisYear = Year.now().toString();
+        final int maxLeaveDayLength = 12;
+
+        Statement statement = connection.createStatement();
+
+        String sql =
+                "SELECT COUNT(*) " +
+                "FROM " +
+                        "(" +
+                            "SELECT DISTINCT e1.emp_number " +
+                            "FROM hs_hr_employee e1 " +
+                                "JOIN ohrm_leave_request lr1 ON e1.emp_number = lr1.emp_number " +
+                                "JOIN ohrm_leave l1 ON l1.leave_request_id = lr1.id " +
+                                "JOIN ohrm_leave_type lt1 ON l1.leave_type_id = lt1.id " +
+                                "JOIN ohrm_leave_status ls1 ON ls1.status = l1.status " +
+                            "WHERE ls1.name IN ('TAKEN', 'SCHEDULED') AND YEAR(l1.date) = "  + thisYear + " " +
+                            "GROUP BY e1.emp_number " +
+                            "HAVING SUM(l1.length_days) > " + maxLeaveDayLength + " " +
+                        ") as temp ";
+        ResultSet rs = statement.executeQuery(sql);
+
+        while (rs.next()) {
+            result = rs.getString(1);
+        }
+        rs.close();
+
+        System.out.println("Number of employees who leave more than 12 days in this year: " + result);
     }
 }
