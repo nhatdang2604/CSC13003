@@ -77,25 +77,7 @@ public class TestSuite extends DBTestCase {
     }
 
     @Test
-    public void testBasicQuery() throws SQLException {
-
-        String actual = "";
-        String expected = "admin";
-
-        Statement statement = connection.createStatement();
-        String sql = "SELECT user_name FROM ohrm_user WHERE id = '1'";
-        ResultSet rs = statement.executeQuery(sql);
-
-        while (rs.next()) {
-            actual = rs.getString("user_name");
-        }
-        rs.close();
-
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void testAdvancedQuery() throws SQLException {
+    public void testQuery() throws SQLException {
 
         //Variable to store the result after querying
         Integer result = 0;
@@ -123,6 +105,7 @@ public class TestSuite extends DBTestCase {
                             "HAVING SUM(l1.length_days) > " + maxLeaveDayLength + " " +
                         ") as temp ";
 
+        //Try to measure the execution time, in milisecond
         long start = System.currentTimeMillis();
         ResultSet rs = statement.executeQuery(sql);
         long end = System.currentTimeMillis();
@@ -136,7 +119,7 @@ public class TestSuite extends DBTestCase {
         rs.close();
 
         //Output the result
-        System.out.println("Number of employees who leave more than 12 days in this year: " + result);
+        System.out.println("Number of employees who leave more than " + maxLeaveDayLength + " days in this year: " + result);
         System.out.println("Execution time: "+ (end-start) + "ms");
 
     }
