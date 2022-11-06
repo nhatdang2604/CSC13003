@@ -7,6 +7,7 @@ import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.mysql.MySqlMetadataHandler;
 import org.dbunit.operation.DatabaseOperation;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -117,6 +118,9 @@ public class TestSuite extends DBTestCase {
 
         //clear the resource after using
         rs.close();
+
+        //Assert if the answer is TLE: the execution time is larger 1 second
+        Assert.assertTrue(result < 1000L);
 
         //Output the result
         System.out.println("Number of employees who leave more than " + maxLeaveDayLength + " days in this year: " + result);
