@@ -19,7 +19,7 @@ else
 
 {
 
-testRunner.gotoStepByName("GroovyScript") //setStartStep
+testRunner.gotoStepByName("Groovy Script") //setStartStep
 
 }
 

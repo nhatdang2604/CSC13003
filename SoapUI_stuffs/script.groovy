@@ -21,8 +21,6 @@ Sheet sheet1 = workbook1.getSheetAt(0) //Index 0 will read the first sheet from 
 
 size = sheet1.getPhysicalNumberOfRows()//get the number of rows, each row is a data set
 
-log.info size
-
 propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep object
 propTestStep.setPropertyValue("_total", size.toString())
 
@@ -45,16 +43,22 @@ workbook1.close() //close the file
 
 ////////////////////////////////////
 
-id = f1.getNumericCellValue().toString()
+id = f1.getNumericCellValue().intValue().toString()
 firstName = f2.getStringCellValue()
 middleName = f3.getStringCellValue() 
 lastName = f4.getStringCellValue()
-code = f5.getNumericCellValue().toString()
+code = f5.getNumericCellValue().intValue().toString()
+
+log.info id
+log.info firstName
+log.info middleName
+log.info lastName
+log.info code
 
 propTestStep.setPropertyValue("id", id) //the value is saved in the property
 propTestStep.setPropertyValue("firstName", firstName) //the value is saved in the property
 propTestStep.setPropertyValue("middleName", middleName) //the value is saved in the property
-propTestStep.setPropertyValue("lasttName", lastName) //the value is saved in the property
+propTestStep.setPropertyValue("lastName", lastName) //the value is saved in the property
 propTestStep.setPropertyValue("code", code) //the value is saved in the property
 
 
