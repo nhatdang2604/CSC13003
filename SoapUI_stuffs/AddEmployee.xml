@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5ae7218c-5bf9-4285-810c-90d2763e61c7" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="97f34a88-241b-482a-bb0c-302b1fa4018c" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8088" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://localhost:8088</con:endpoint></con:endpoints><con:resource name="Index.php" path="/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/" id="beb91586-3ad7-46d9-83e9-418f3d89104b"><con:settings/><con:parameters/><con:resource name="user" path="api/v1/user" id="eaec0511-8730-4351-9cac-1a0c6a2efe6f"><con:settings/><con:parameters><con:parameter><con:name>limit</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="a3029fed-f058-4daa-8a73-85b1dc1c3ab3" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:user="http://localhost/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/api/v1/user">user:Response</con:element></con:representation><con:request name="Request 1" id="106b0a10-f5e7-4f57-907c-18ce9efd7e85" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8088</con:endpoint><con:request/><con:originalUri>http://localhost/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/api/v1/user</con:originalUri><con:credentials><con:selectedAuthProfile>JWT</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="limit" value="1000" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>limit</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="employee" path="api/v1/employee/" id="5dc8c3af-03c8-4262-b775-27bbaef87d78"><con:settings/><con:parameters/><con:resource name="{emp_id}" path="{emp_id}" id="b642d488-6192-4691-b828-31f3629f823a"><con:settings/><con:parameters><con:parameter><con:name>emp_id</con:name><con:value>emp_id</con:value><con:style>TEMPLATE</con:style><con:default>emp_id</con:default></con:parameter></con:parameters><con:method name="Method 1" id="7e484521-710c-4c56-87e3-68753e82a086" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="ecd962be-11fb-4163-a6a1-2d85b1078cc3" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8088</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="Method 1" id="03ee4c48-f21f-4716-aeae-b6c08e218a23" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="e7631ccf-5b6e-418c-962c-943a61a39535" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8088</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="Index.php 1" id="62547370-d9ae-464f-ac0c-a88949ce5a4e" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="9a7cc39b-7775-4aba-991f-a808ef56782e" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:8088</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="79de65d4-1f91-45fb-974d-d4045120397d" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a1cf48a8-4eaa-4793-8ff4-b3694b5e9ca6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Method 1 - Request 1" id="bf5c6294-eaea-471a-bb9b-a66d0df271b2"><con:settings/><con:config service="http://localhost:8088" resourcePath="/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/api/v1/user" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Method 1 - Request 1" id="106b0a10-f5e7-4f57-907c-18ce9efd7e85" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8088</con:endpoint><con:request/><con:originalUri>http://localhost/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/api/v1/user</con:originalUri><con:assertion type="Simple Contains" id="ffa516e0-0eae-4a18-8589-93f4ed24549d" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="90fa5283-d09a-42dd-a892-68be8028ae49" name="Contains 1"><con:configuration><token>Enableds</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>JWT</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="limit" value="1000" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>limit</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="ee19e650-7b16-49ae-a674-2bd710088331" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AddEmployee" searchProperties="true"><con:settings/><con:testStep type="properties" name="Properties" id="2d1a3944-cb74-44e8-8246-c6d20ca294c9"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>id</con:name><con:value>0.0</con:value></con:property><con:property><con:name>firstName</con:name><con:value>firstName0</con:value></con:property><con:property><con:name>middleName</con:name><con:value>middleName0</con:value></con:property><con:property><con:name>lastName</con:name><con:value/></con:property><con:property><con:name>code</con:name><con:value>0.0</con:value></con:property><con:property><con:name>_total</con:name><con:value>17</con:value></con:property><con:property><con:name>_count</con:name><con:value>2</con:value></con:property><con:property><con:name>_next</con:name><con:value>3</con:value></con:property><con:property><con:name>_stopVal</con:name><con:value>F</con:value></con:property><con:property><con:name>lasttName</con:name><con:value>lastName0</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="94fb41a6-2502-41cd-81fc-dfb7488421af"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.ss.util.*;
+import org.apache.poi.ss.usermodel.*;
+
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+def counter,next,previous,size //Variables used to handle the loop and to move inside the file
+def fs = new FileInputStream ("/home/dangkl123/IdeaProjects/CSC13003/SoapUI_stuffs/dataset.xls") 
+
+Workbook workbook1 = WorkbookFactory.create(fs)
+
+Sheet sheet1 = workbook1.getSheetAt(0) //Index 0 will read the first sheet from the workbook, you can also specify the sheet name with "Sheet1"
+//Sheet sheet1 = workbook1.getSheet("Sheet1")
+
+size = sheet1.getPhysicalNumberOfRows()//get the number of rows, each row is a data set
+
+log.info size
+
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep object
+propTestStep.setPropertyValue("_total", size.toString())
+
+counter = propTestStep.getPropertyValue("_count").toString() //counter variable contains iteration number
+
+counter = counter.toInteger()
+
+next = (counter > size - 2? 0: counter+1) //set the next value
+
+// OBTAINING THE DATA YOU NEED
+
+//Get cell (0, counter) on the excel files
+Cell f1 = sheet1.getRow(counter).getCell(0) // getCell(column,row) //obtains field1
+Cell f2 = sheet1.getRow(counter).getCell(1) // getCell(column,row) //obtains field2
+Cell f3 = sheet1.getRow(counter).getCell(2)
+Cell f4 = sheet1.getRow(counter).getCell(3)
+Cell f5 = sheet1.getRow(counter).getCell(4)
+
+workbook1.close() //close the file
+
+////////////////////////////////////
+
+id = f1.getNumericCellValue().toString()
+firstName = f2.getStringCellValue()
+middleName = f3.getStringCellValue() 
+lastName = f4.getStringCellValue()
+code = f5.getNumericCellValue().toString()
+
+propTestStep.setPropertyValue("id", id) //the value is saved in the property
+propTestStep.setPropertyValue("firstName", firstName) //the value is saved in the property
+propTestStep.setPropertyValue("middleName", middleName) //the value is saved in the property
+propTestStep.setPropertyValue("lasttName", lastName) //the value is saved in the property
+propTestStep.setPropertyValue("code", code) //the value is saved in the property
+
+
+propTestStep.setPropertyValue("_count", next.toString()) //increase Count value
+
+next++ //increase next value
+
+propTestStep.setPropertyValue("_next", next.toString()) //set Next value on the properties step
+
+//Decide if the test has to be run again or not
+if (counter == size - 1)
+	//do nothing
+{
+
+propTestStep.setPropertyValue("_stopVal", "T")
+
+log.info "Setting the StopVal property now..."
+
+}
+
+else if (counter==0)
+
+{
+
+def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+
+propTestStep.setPropertyValue("_stopVal", "F")
+
+}
+
+else
+
+{
+
+propTestStep.setPropertyValue("_stopVal", "F")
+
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer><con:oAuth2Profile><con:name>JWT</con:name><con:clientID>rest_api_test</con:clientID><con:clientSecret>hehe</con:clientSecret><con:authorizationURI>http://localhost:8088/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/oauth/issueToken</con:authorizationURI><con:accessTokenURI>http://localhost:8088/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/oauth/issueToken</con:accessTokenURI><con:redirectURI>http://localhost:8088/orangehrm-4.10.1/orangehrm-4.10.1/symfony/web/index.php/oauth/issueToken</con:redirectURI><con:accessToken>9ea3a434d543b6ec6d912848c84d5d9c1d204b95</con:accessToken><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:scope/><con:accessTokenStatus>UNKNOWN</con:accessTokenStatus><con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus><con:accessTokenExpirationTime>3600</con:accessTokenExpirationTime><con:accessTokenIssuedTime>1667978502</con:accessTokenIssuedTime><con:javaScripts><con:entry/><con:entry/></con:javaScripts></con:oAuth2Profile></con:oAuth2ProfileContainer><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
