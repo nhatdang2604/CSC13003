@@ -1,0 +1,157 @@
+"Test Suite","Test Case","Test Step","Step Type","Step Status","Result message","Execution Date"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Groovy Script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Properties","properties","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Save Supervisor Details - Request 1","restrequest","FAILED","Assertion [Valid HTTP Status Codes] has status [FAILED]
+Assertion [Invalid HTTP Status Codes] has status [VALID]
+Assertion [Contains] has status [FAILED]
+Assertion [JsonPath Match] has status [FAILED]
+Assertion [JsonPath Existence Match] has status [FAILED]
+Assertion [Script Assertion] has status [FAILED]
+","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Return script","groovy","OK","","11-Nov-2022 20_51","
+"
+"Supervisor Details Test Suite","Add Supervisor Details Test Case","Clear script","groovy","OK","","11-Nov-2022 20_51","
+"

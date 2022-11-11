@@ -1,0 +1,4 @@
+{
+	"supervisorId":"${Properties#supervisorId}",
+	"reportingMethod":"${Properties#reportingMethod}"
+}

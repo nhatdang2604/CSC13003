@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="369e533c-d9c5-47b7-b252-f73b753d37c7" activeEnvironment="Default" name="Orangehrm" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="Supervisor Details Test Suite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="Add Supervisor Details Test Case"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="true"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="true"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" id="3dac13e3-b080-41be-a162-3e680babcbdf" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://localhost</con:endpoint></con:endpoints><con:resource name="IssueToken" path="/orangehrm-4.5/symfony/web/index.php/oauth/issueToken" id="6a15445f-2830-42d7-b718-cb0d72142211"><con:settings/><con:parameters><con:parameter><con:name>client_id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>client_secret</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>grant_type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="IssueToken 1" id="4503924c-387b-41a0-ac65-d6fa42b8d3ee" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="ae2fee2b-8ffd-47c9-8ba0-dca22f5b165f" mediaType="application/x-www-form-urlencoded" postQueryString="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request/><con:originalUri>http://localhost/orangehrm-4.5/symfony/web/index.php/oauth/issueToken</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="grant_type" value="client_credentials"/>
+  <con:entry key="client_secret" value="kcpm_k1"/>
+  <con:entry key="client_id" value="api_testing"/>
+</con:parameters><con:parameterOrder><con:entry>client_id</con:entry><con:entry>client_secret</con:entry><con:entry>grant_type</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="{employee_id}" path="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}" id="aff66e45-30ca-4ada-8e66-60443d7c18c5"><con:settings/><con:parameters><con:parameter><con:name>employee_id</con:name><con:value>${Properties#id}</con:value><con:style>TEMPLATE</con:style><con:default>${Properties#id}</con:default></con:parameter></con:parameters><con:method name="Employee Details" id="d3227403-51af-418c-946c-2b849db5045c" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:emp="http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/employee_id">emp:Response</con:element></con:representation><con:request name="Request 1" id="74f2622e-0efa-4a01-8f10-02d890fe52bc" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request/><con:originalUri>http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/employee_id</con:originalUri><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method><con:method name="Save Employee" id="d3227403-51af-418c-946c-2b849db5045c" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:emp="http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/employee_id">emp:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:emp="http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/employee_id">emp:Fault</con:element></con:representation><con:request name="Request 1" id="74f2622e-0efa-4a01-8f10-02d890fe52bc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"firstName":"${Properties#firstName}",
+	"lastName": "${Properties#lastName}",
+	"middleName": "${Properties#middleName}",
+	"code":"${Properties#code}"
+}
+</con:request><con:originalUri>http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/employee_id</con:originalUri><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#id}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="supervisor" path="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}/supervisor" id="3c531832-8016-434b-a2b3-3442503590ee"><con:settings/><con:parameters><con:parameter><con:name>employee_id</con:name><con:value>employee_id</con:value><con:style>TEMPLATE</con:style><con:default>employee_id</con:default></con:parameter></con:parameters><con:method name="Supervisor Details" id="800b6515-c1a9-41a6-a422-dba7329c4d16" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:request></con:method><con:method name="Save Supervisor Details" id="800b6515-c1a9-41a6-a422-dba7329c4d16" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>401 400 404</con:status><con:params/><con:element xmlns:sup="http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/3/supervisor">sup:Fault</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sup="http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/-1.0/supervisor">sup:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/x-www-form-urlencoded</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"supervisorId": "${Properties#supervisorId}",
+	"reportingMethod": "${Properties#reportingMethod}"
+}
+</con:request><con:originalUri>http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/3/supervisor</con:originalUri><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#employeeId}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:request></con:method><con:method name="Delete Supervisor Details" id="800b6515-c1a9-41a6-a422-dba7329c4d16" method="DELETE"><con:settings/><con:parameters/><con:request name="Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"supervisorId":"${Properties#supervisorId}",
+	"reportingMethod":"${Properties#reportingMethod}"
+}
+</con:request><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:request></con:method><con:method name="Update Supervisor Details" id="800b6515-c1a9-41a6-a422-dba7329c4d16" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"supervisorId":"${Properties#supervisorId}",
+	"reportingMethod":"${Properties#reportingMethod}"
+}</con:request><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="ccbdcac7-e1b5-4eec-bc7a-70360b463f6e" name="Employee Test Suite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="16eb5d39-9405-4094-a609-3bb3302e0728" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Add Employee Test Case" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="c4b2c509-4e1f-4c88-93fd-0ade45256230"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.ss.util.*;
+import org.apache.poi.ss.usermodel.*;
+
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+def counter,next,previous,size //Variables used to handle the loop and to move inside the file
+
+def projectPath = context.expand('${projectDir}')
+def path = projectPath + "\\dataset.xls"
+
+def fs = new FileInputStream(path)
+
+Workbook workbook1 = WorkbookFactory.create(fs)
+
+Sheet sheet1 = workbook1.getSheetAt(0) //Index 0 will read the first sheet from the workbook, you can also specify the sheet name with "Sheet1"
+//Sheet sheet1 = workbook1.getSheet("Sheet1")
+
+size = sheet1.getPhysicalNumberOfRows()//get the number of rows, each row is a data set
+
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep object
+propTestStep.setPropertyValue("_total", size.toString())
+
+counter = propTestStep.getPropertyValue("_count").toString() //counter variable contains iteration number
+
+counter = counter.toInteger()
+
+next = (counter > size - 2? 0: counter+1) //set the next value
+
+// OBTAINING THE DATA YOU NEED
+
+//Get cell (0, counter) on the excel files
+Cell f1 = sheet1.getRow(counter).getCell(0) // getCell(column,row) //obtains field1
+Cell f2 = sheet1.getRow(counter).getCell(1) // getCell(column,row) //obtains field2
+Cell f3 = sheet1.getRow(counter).getCell(2)
+Cell f4 = sheet1.getRow(counter).getCell(3)
+Cell f5 = sheet1.getRow(counter).getCell(4)
+
+workbook1.close() //close the file
+
+////////////////////////////////////
+
+id = f1.getNumericCellValue().intValue().toString()
+firstName = f2.getStringCellValue()
+middleName = f3.getStringCellValue() 
+lastName = f4.getStringCellValue()
+code = f5.getNumericCellValue().intValue().toString()
+
+log.info id
+log.info firstName
+log.info middleName
+log.info lastName
+log.info code
+
+propTestStep.setPropertyValue("id", id) //the value is saved in the property
+propTestStep.setPropertyValue("firstName", firstName) //the value is saved in the property
+propTestStep.setPropertyValue("middleName", middleName) //the value is saved in the property
+propTestStep.setPropertyValue("lastName", lastName) //the value is saved in the property
+propTestStep.setPropertyValue("code", code) //the value is saved in the property
+
+
+propTestStep.setPropertyValue("_count", next.toString()) //increase Count value
+
+next++ //increase next value
+
+propTestStep.setPropertyValue("_next", next.toString()) //set Next value on the properties step
+
+//Decide if the test has to be run again or not
+if (counter == size - 1)
+	//do nothing
+{
+
+propTestStep.setPropertyValue("_stopVal", "T")
+
+log.info "Setting the StopVal property now..."
+
+}
+
+else if (counter==0)
+
+{
+
+def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+
+propTestStep.setPropertyValue("_stopVal", "F")
+
+}
+
+else
+
+{
+
+propTestStep.setPropertyValue("_stopVal", "F")
+
+}</script></con:config></con:testStep><con:testStep type="properties" name="Properties" id="a9f3fbea-3212-4667-ab0a-71f9112188bf"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>id</con:name><con:value/></con:property><con:property><con:name>firstName</con:name><con:value/></con:property><con:property><con:name>middleName</con:name><con:value/></con:property><con:property><con:name>lastName</con:name><con:value/></con:property><con:property><con:name>code</con:name><con:value/></con:property><con:property><con:name>_total</con:name><con:value/></con:property><con:property><con:name>_count</con:name><con:value>1</con:value></con:property><con:property><con:name>_next</con:name><con:value/></con:property><con:property><con:name>_stopVal</con:name><con:value/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Save Employee - Request 1" id="a18bf0a8-ee62-4f0d-bc47-374b97c0febe"><con:settings/><con:config service="http://localhost" resourcePath="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}" methodName="Save Employee" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Save Employee - Request 1" id="74f2622e-0efa-4a01-8f10-02d890fe52bc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"firstName":"${Properties#firstName}",
+	"lastName": "${Properties#lastName}",
+	"middleName": "${Properties#middleName}",
+	"code":"${Properties#code}"
+}
+</con:request><con:originalUri>http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/employee_id</con:originalUri><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#id}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Return script" id="3ded926e-15ea-4dca-b625-ba9e52dbc4d4"><con:settings/><con:config><script>def myTestCase = context.testCase
+def runner
+
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep
+
+endLoop = propTestStep.getPropertyValue("_stopVal").toString()
+
+if (endLoop.toString().toLowerCase().equals("t"))
+
+{
+
+log.info ("Exit Groovy Data Source Looper")
+
+assert true
+
+}
+
+else
+
+{
+
+testRunner.gotoStepByName("Groovy Script") //setStartStep
+
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="Clear script" id="9227394c-69d0-4e76-b45b-89c1c670002d"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.ss.util.*;
+import org.apache.poi.ss.usermodel.*;
+
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep object
+propTestStep.setPropertyValue("id", "")
+propTestStep.setPropertyValue("firstName", "")
+propTestStep.setPropertyValue("middleName", "")
+propTestStep.setPropertyValue("lastName", "")
+propTestStep.setPropertyValue("code", "")
+propTestStep.setPropertyValue("_total", "")
+propTestStep.setPropertyValue("_count", "1")
+propTestStep.setPropertyValue("_next", "")
+propTestStep.setPropertyValue("_stopVal", "")</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="08b48577-1c36-4983-a236-98ef25b20e29" name="Supervisor Details Test Suite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="7909c2bf-4824-423f-ba97-6347557847a5" failOnError="false" failTestCaseOnErrors="false" keepSession="false" maxResults="0" name="Add Supervisor Details Test Case" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="groovy" name="Groovy Script" id="5783e4f6-7c7e-4bb1-a040-fb74251c05e2"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.ss.util.*;
+import org.apache.poi.ss.usermodel.*;
+
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+def counter,next,previous,size //Variables used to handle the loop and to move inside the file
+
+def projectPath = context.expand('${projectDir}')
+def path = projectPath + "/dataset.xls"
+
+def fs = new FileInputStream(path)
+
+Workbook workbook1 = WorkbookFactory.create(fs)
+
+Sheet sheet1 = workbook1.getSheetAt(1) //Index 0 will read the first sheet from the workbook, you can also specify the sheet name with "Sheet1"
+//Sheet sheet1 = workbook1.getSheet("Sheet1")
+
+size = sheet1.getPhysicalNumberOfRows()//get the number of rows, each row is a data set
+
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep object
+propTestStep.setPropertyValue("_total", size.toString())
+
+counter = propTestStep.getPropertyValue("_count").toString() //counter variable contains iteration number
+
+counter = counter.toInteger()
+
+next = (counter > size - 2? 0: counter+1) //set the next value
+
+// OBTAINING THE DATA YOU NEED
+
+//Get cell (0, counter) on the excel files
+Cell f1 = sheet1.getRow(counter).getCell(0) // getCell(column,row) //obtains field1
+Cell f2 = sheet1.getRow(counter).getCell(1) // getCell(column,row) //obtains field2
+Cell f3 = sheet1.getRow(counter).getCell(2)
+Cell f4 = sheet1.getRow(counter).getCell(3)
+
+workbook1.close() //close the file
+
+////////////////////////////////////
+
+//employeeId = f1.getNumericCellValue().intValue().toString()
+if (f1.getCellType() == CellType.STRING) {
+	employeeId = f1.getStringCellValue()
+}
+else {
+	employeeId = f1.getNumericCellValue()
+	if (employeeId.intValue() == employeeId) {
+		employeeId = employeeId.intValue().toString()
+	}
+	else {
+		employeeId = employeeId.toString()
+	}
+}
+//supervisorId = f2.getNumericCellValue().intValue().toString()
+if (f2.getCellType() == CellType.STRING) {
+	supervisorId = f2.getStringCellValue()
+}
+else {
+	supervisorId = f2.getNumericCellValue()
+	if (supervisorId.intValue() == supervisorId) {
+		supervisorId = supervisorId.intValue().toString()
+	}
+	else {
+		supervisorId = supervisorId.toString()
+	}
+}
+reportingMethod = f3.getStringCellValue() 
+expectedResult = f4.getStringCellValue()
+
+log.info employeeId
+log.info supervisorId
+log.info reportingMethod
+log.info expectedResult
+
+propTestStep.setPropertyValue("employeeId", employeeId) //the value is saved in the property
+propTestStep.setPropertyValue("supervisorId", supervisorId) //the value is saved in the property
+propTestStep.setPropertyValue("reportingMethod", reportingMethod) //the value is saved in the property
+propTestStep.setPropertyValue("expectedResult", expectedResult) //the value is saved in the property
+
+propTestStep.setPropertyValue("_count", next.toString()) //increase Count value
+
+next++ //increase next value
+
+propTestStep.setPropertyValue("_next", next.toString()) //set Next value on the properties step
+
+//Decide if the test has to be run again or not
+if (counter == size - 1)
+	//do nothing
+{
+
+propTestStep.setPropertyValue("_stopVal", "T")
+
+log.info "Setting the StopVal property now..."
+
+}
+
+else if (counter==0)
+
+{
+
+def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+
+propTestStep.setPropertyValue("_stopVal", "F")
+
+}
+
+else
+
+{
+
+propTestStep.setPropertyValue("_stopVal", "F")
+
+}</script></con:config></con:testStep><con:testStep type="properties" name="Properties" id="293c8a31-eba2-4bc1-9994-6f51bf751bd5"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>employeeId</con:name><con:value/></con:property><con:property><con:name>supervisorId</con:name><con:value/></con:property><con:property><con:name>reportingMethod</con:name><con:value/></con:property><con:property><con:name>expectedResult</con:name><con:value/></con:property><con:property><con:name>_total</con:name><con:value/></con:property><con:property><con:name>_count</con:name><con:value>1</con:value></con:property><con:property><con:name>_next</con:name><con:value/></con:property><con:property><con:name>_stopVal</con:name><con:value/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Save Supervisor Details - Request 1" id="3fb8042f-fb12-4a55-89d8-c9cd3c83493f"><con:settings/><con:config service="http://localhost" resourcePath="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}/supervisor" methodName="Save Supervisor Details" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Save Supervisor Details - Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"supervisorId":"${Properties#supervisorId}",
+	"reportingMethod":"${Properties#reportingMethod}"
+}
+</con:request><con:originalUri>http://localhost/orangehrm-4.5/symfony/web/index.php/api/v1/employee/-1.0/supervisor</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="480631bf-5940-4d78-bf34-9a82bef4f3f2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="b2cf5566-dde2-4614-9db6-64288a445baf" name="Invalid HTTP Status Codes"><con:configuration><codes>202
+400
+404</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="70b712bf-55ea-497a-9d2c-3ebb17737205" name="Contains"><con:configuration><token>${Properties#expectedResult}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="21a4cda2-08ee-4fc2-a584-1e9174fabd4f" name="JsonPath Match"><con:configuration><path>$.success</path><content>${Properties#expectedResult}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Existence Match" id="36a6d818-bdac-426b-b95a-11a5c21cbfe3" name="JsonPath Existence Match"><con:configuration><path>$.success</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="cfb8a3dc-3e7f-49a5-b973-b2f14f019fb6" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+// Get response
+def response = messageExchange.response.responseContent
+
+def parseJson = new JsonSlurper().parseText(response)
+
+// Check response and expected value
+def header = messageExchange.getResponseHeaders()
+if (['HTTP/1.1 200 OK'] == header['#status#']) {
+	assert parseJson.success == context.expand('${Properties#expectedResult}')
+}
+else {
+	assert parseJson.error.text == context.expand('${Properties#expectedResult}')
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Profile 2</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#employeeId}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Return script" id="a6bfdc07-af17-4fea-bb99-a11ffe85b69a"><con:settings/><con:config><script>def myTestCase = context.testCase
+def runner
+
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep
+
+endLoop = propTestStep.getPropertyValue("_stopVal").toString()
+
+if (endLoop.toString().toLowerCase().equals("t"))
+
+{
+
+log.info ("Exit Groovy Data Source Looper")
+
+assert true
+
+}
+
+else
+
+{
+
+testRunner.gotoStepByName("Groovy Script") //setStartStep
+
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="Clear script" id="3f65a1bd-39a0-4ea6-a4c4-972a7e1812be"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.ss.util.*;
+import org.apache.poi.ss.usermodel.*;
+
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+propTestStep = myTestCase.getTestStepByName("Properties") // get the Property TestStep object
+propTestStep.setPropertyValue("employeeId", "")
+propTestStep.setPropertyValue("supervisorId", "")
+propTestStep.setPropertyValue("reportingMethod", "")
+propTestStep.setPropertyValue("expectedResult", "")
+propTestStep.setPropertyValue("_total", "")
+propTestStep.setPropertyValue("_count", "1")
+propTestStep.setPropertyValue("_next", "")
+propTestStep.setPropertyValue("_stopVal", "")</script></con:config></con:testStep><con:tearDownScript>// Code to execute the GenerateCSVReport test step
+testRunner.testCase.testSuite.project.testSuites["Library"].testCases["Reporting_Utility"].
+testSteps["GenerateCSVReport"].run(testRunner, context);</con:tearDownScript><con:properties/></con:testCase><con:testCase id="14de1a50-9975-4a14-9729-05a49a4d253c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get Supervisor Details Test Case" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Supervisor Details - Request 1" id="ddb0476e-67be-4893-9622-42b10cfd5390"><con:settings/><con:config service="http://localhost" resourcePath="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}/supervisor" methodName="Supervisor Details" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Supervisor Details - Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="89b8c889-8e24-4916-b378-9e5b1d5b39ac" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Update Supervisor Details Test Case" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Update Supervisor Details - Request 1" id="5f3f84a2-b018-4dad-b2e7-587d5daa0214"><con:settings/><con:config service="http://localhost" resourcePath="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}/supervisor" methodName="Update Supervisor Details" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Update Supervisor Details - Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"supervisorId":"${Properties#supervisorId}",
+	"reportingMethod":"${Properties#reportingMethod}"
+}</con:request><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5397133c-21b1-40e6-8fc5-906d52a85978" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Delete Supervisor Details Test Case" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Delete Supervisor Details - Request 1" id="b7395479-c315-4620-b31a-31590e6583b5"><con:settings/><con:config service="http://localhost" resourcePath="/orangehrm-4.5/symfony/web/index.php/api/v1/employee/{employee_id}/supervisor" methodName="Delete Supervisor Details" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Delete Supervisor Details - Request 1" id="d4cdd28c-1cbe-4d46-b3f9-90425cd18234" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost</con:endpoint><con:request>{
+	"supervisorId":"${Properties#supervisorId}",
+	"reportingMethod":"${Properties#reportingMethod}"
+}
+</con:request><con:credentials><con:selectedAuthProfile>Orangehrm</con:selectedAuthProfile><con:authType>OAuth 2.0</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="employee_id" value="${Properties#id}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>employee_id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="6005c0ca-15c7-4101-873e-e8ed5969cf48" name="Library" disabled="true"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3ab1f5fe-d1c0-4cb7-b688-7fb191715edf" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Reporting_Utility" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GenerateCSVReport" id="7c494611-903f-4dc9-88a9-bd001ce869ec"><con:settings/><con:config><script>// Try-catch block to handle exceptions
+try {
+
+// 1. Create a "SoapUIResults" folder in the project path 
+      // Retrieve the project root folder
+      def projectPath = new com.eviware.soapui.support.GroovyUtils(context).projectPath
+
+      // Specify a folder inside project root to store the results
+      String folderPath = projectPath + "/SoapUIResults";
+
+      // Create a File object for the specified path
+      def resultFolder = new File(folderPath);
+
+      // Check for existence of folder and create a folder
+      if(!resultFolder.exists())
+      {
+        resultFolder.mkdirs();
+      }
+
+/* ------------------------------------------------------------------------------- */
+
+// 2. Create a subfolder (with timestamp) to store the request-response local copy 
+      // Retrieve the latest execution date-time
+      Date d = new Date();
+      def executionDate = d.format("dd-MMM-yyyy HH_mm");
+
+      // Specify the subfolder path with name Request-Response_CurrentTimeStamp
+      String subfolderPath1 = folderPath+ "/Request-Response_"+executionDate;
+
+      // Create this sub-folder
+      new File(subfolderPath1).mkdirs();
+
+/* ------------------------------------------------------------------------------- */
+
+// 3. Create another subfolder "CSV Reports" to store the reports file 
+      // Specify the subfolder path with name CSV Reports
+      String subfolderPath2 = folderPath+ "/CSV Reports";
+
+      // Create this sub-folder
+      new File(subfolderPath2).mkdirs();
+
+/* ------------------------------------------------------------------------------- */
+
+// 4. Create a Report.csv file inside the CSV Reports folder 
+      // Create a File object for Report csv file (with timestamp)
+      def reportFile = new File(subfolderPath2, "Report_"+executionDate+".csv");
+
+      // Check for existence of report file and create a file
+      if(!reportFile.exists())
+      {
+        reportFile.createNewFile();
+        // Create required column names in the report file
+        /*reportFile.write('"Test Suite","Test Case","Employee Id","Supervisor Id", "Reporting Method","Expected Result",'
+        			    +'"Actual Result","Test Case Status",'
+                        +'"Result message","Execution Date"');*/
+        reportFile.write('"Test Suite","Test Case","Test Step","Step Type","Step Status",'
+                        +'"Result message","Execution Date"');
+      }
+/* ------------------------------------------------------------------------------- */
+// 5. Inserting data in the file
+      // Iterate over all the test steps results
+  for(stepResult in testRunner.getResults())
+  {
+    // Retrieve Test Suite name
+   def testSuite = testRunner.testCase.testSuite.name;
+   // Retrieve Test Case name
+   def testCase = testRunner.testCase.name;
+   // Retrieve Test Step
+   def testStep = stepResult.getTestStep();
+   // Retrieve Test Step name
+   def testStepName = testStep.name
+   // Retrieve Test Step type
+   def type = testStep.config.type
+   // Retrieve Test Step status
+   def status = stepResult.getStatus()
+   
+   // Creating new line in report file
+   reportFile.append('\n');
+
+   // Write all the necessary information in the file
+   reportFile.append('"' + testSuite + '",');
+   reportFile.append('"' + testCase + '",');
+   reportFile.append('"' + testStepName + '",');
+   reportFile.append('"' + type + '",');
+   reportFile.append('"' + status + '",');
+
+   // Retrieve the test result messages
+   reportFile.append('"');
+   if (testStep instanceof com.eviware.soapui.model.testsuite.Assertable) {
+   	for( assertion in testStep.assertionList )
+	{
+		def messages = "";
+		def isAssertionLogged = false;
+		for( message  in stepResult.getMessages() )
+		{
+			if(message.contains(assertion.name))
+			{
+				messages = messages + testStepName + "- Error [" + message + "]" + "\n";
+				isAssertionLogged = true;
+				break;
+			}
+		}
+
+		if(isAssertionLogged)
+		//if there is no error message for the assertion, the assertion is either passed (VALID) or was not ran (UNKNOWN)
+		{
+			step_a = "Assertion [" + assertion.label + "] has status [FAILED]" + "\n";
+			reportFile.append(step_a);
+		} else {
+			if(assertion.isDisabled()) { 
+				step_a = "Assertion [" + assertion.label + "] has status [UNKNOWN]" + "\n";
+				reportFile.append(step_a);
+			}
+			else {
+				step_a = "Assertion [" + assertion.label + "] has status [VALID]" + "\n";
+				reportFile.append(step_a);
+			}
+		}								
+	}
+   }
+   reportFile.append('",');
+
+   //Write executionDate in the file
+   reportFile.append('"' + executionDate + '",');
+   reportFile.append('"\n"')
+   
+/* ------------------------------------------------------------------------------- */
+
+// 6. Extract the request and response and save it to external file
+      // Verify if the test step type is request: SOAP project or restrequest: REST project
+        if((type=="request").or(type=="restrequest"))
+        {
+          // Extract the request from the test step
+          def extRequest = testStep.properties["Request"].value;    
+
+      // Create a file in the reports folder and write the request
+      // Naming convention: request_TestSuiteName_TestCaseName_TestStepName.txt
+      def requestFile=subfolderPath1+"/request_"+testSuite+"_"+testCase+"_"+testStepName+".txt";
+      def rqfile = new File(requestFile);
+      rqfile.write(extRequest, "UTF-8");
+
+      // Extract the response from the test step
+      def extResponse = stepResult.getResponseContent();    
+
+      // Create a file in the reports folder and write the response
+      // Naming convention: response_TestSuiteName_TestCaseName_TestStepName.txt
+      def responseFile=subfolderPath1+"/response_"+testSuite+"_"+testCase+"_"+testStepName+".txt";
+      def rsfile = new File(responseFile);
+      rsfile.write(extResponse, "UTF-8");
+     }
+   }
+ }
+catch(exc)
+{
+   log.error("Exception happened: " + exc.toString());
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer><con:oAuth2Profile><con:name>Orangehrm</con:name><con:clientID>api_testing</con:clientID><con:clientSecret>kcpm_k1</con:clientSecret><con:accessTokenURI>http://localhost/orangehrm-4.5/symfony/web/index.php/oauth/issueToken</con:accessTokenURI><con:accessToken>381d95940d3e03396186a95ad30380db7f5a4421</con:accessToken><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:scope>admin</con:scope><con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus><con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus><con:accessTokenExpirationTime>3600</con:accessTokenExpirationTime><con:accessTokenIssuedTime>1668172899</con:accessTokenIssuedTime></con:oAuth2Profile><con:oAuth2Profile><con:name>Profile 2</con:name><con:clientID>rest_api_test</con:clientID><con:clientSecret>hehe</con:clientSecret><con:authorizationURI>http://127.0.0.1/orangehrm-4.10.1/symfony/web/index.php/oauth/issueToken)</con:authorizationURI><con:accessTokenURI>http://127.0.0.1/orangehrm-4.10.1/symfony/web/index.php/oauth/issueToken)</con:accessTokenURI><con:accessTokenPosition>HEADER</con:accessTokenPosition><con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow><con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod><con:scope>admin</con:scope></con:oAuth2Profile></con:oAuth2ProfileContainer><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
