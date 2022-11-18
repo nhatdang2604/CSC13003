@@ -10,14 +10,14 @@ import org.testng.annotations.BeforeTest;
 
 import java.time.Duration;
 
-public class LoginTest {
+public class BaseTest {
 
-    public static WebDriver driver;
+    protected WebDriver driver;
 
     private static final String IP = "localhost";
     private static final String PORT = "8088";
 
-    private static final String BASE_URL = "http://" + IP + ":" + PORT + "/orangehrm-5.1/web/index.php";
+    public static final String BASE_URL = "http://" + IP + ":" + PORT + "/orangehrm-5.1/web/index.php";
     private static final String LOGIN_URL = BASE_URL + "/auth/login";
 
     @BeforeTest
