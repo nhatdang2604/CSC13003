@@ -27,7 +27,7 @@ public class BaseTest {
 
         driver.get(LOGIN_URL);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("input[name='username']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[name='username']")));
 
         driver.findElement(By.cssSelector("input[name='username']")).sendKeys("admin");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("Dangkl123812010@");
