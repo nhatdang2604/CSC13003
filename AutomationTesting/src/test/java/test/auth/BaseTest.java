@@ -58,17 +58,6 @@ public class BaseTest {
         driver.findElement(By.className("orangehrm-login-button")).click();
     }
 
-    @AfterTest
-    public void tearDown() throws SQLException {
 
-        //Delete data from orhm_leave_type table
-        Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
-        Statement statement = connection.createStatement();
-        String sql =
-                "DELETE " +
-                "FROM ohrm_leave_type";
-        statement.executeUpdate(sql);
-        statement.close();
-    }
 
 }

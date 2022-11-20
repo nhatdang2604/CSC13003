@@ -1,4 +1,4 @@
-package test.leave;
+package test.admin;
 
 //import junit.framework.Assert;
 import org.openqa.selenium.By;
@@ -18,7 +18,7 @@ import java.sql.Statement;
 import java.time.Duration;
 
 
-public class AddLeaveTypeTest extends BaseTest {
+public class AddSkillTest extends BaseTest {
 
     private static int ENTITLEMENT_SITUATION_YES_IDX = 1;
     private static int  ENTITLEMENT_SITUATION_NO_IDX = 0;
@@ -83,8 +83,8 @@ public class AddLeaveTypeTest extends BaseTest {
             Statement statement = connection.createStatement();
             String sql =
                     "SELECT 1 " +
-                    "FROM ohrm_leave_type " +
-                    "WHERE name = '" + testRecord[1] + "' AND exclude_in_reports_if_no_entitlement = " + testRecord[2];
+                            "FROM ohrm_leave_type " +
+                            "WHERE name = '" + testRecord[1] + "' AND exclude_in_reports_if_no_entitlement = " + testRecord[2];
             ResultSet resultSet = statement.executeQuery(sql);
             Integer result = null;
             while (resultSet.next()) {
@@ -121,14 +121,14 @@ public class AddLeaveTypeTest extends BaseTest {
     @AfterTest
     public void tearDown() throws SQLException {
 
-        //Delete data from ohrm_leave_type table
+        //Delete data from ohrm_skill table
         Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
         Statement statement = connection.createStatement();
-
         String sql =
                 "DELETE " +
-                "FROM ohrm_leave_type";
+                "FROM ohrm_skill";
         statement.executeUpdate(sql);
+
 
         statement.close();
     }
