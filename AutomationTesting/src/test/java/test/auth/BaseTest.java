@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.time.Duration;
 
 public class BaseTest {
@@ -19,6 +21,28 @@ public class BaseTest {
 
     public static final String BASE_URL = "http://" + IP + ":" + PORT + "/orangehrm-5.1/web/index.php";
     private static final String LOGIN_URL = BASE_URL + "/auth/login";
+
+    //SQL stuffs
+    private static final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
+    private static final String DBS_IP = "127.0.0.1";                   //editable
+    private static final String DBS_PORT = "3306";                      //editable
+    private static final String SCHEMA_NAME = "orangehrm_test";    //editable
+
+    public static final String CONNECTION_STR = "jdbc:mysql://" + DBS_IP + ":" + DBS_PORT + "/" + SCHEMA_NAME + "?useSSL=false";
+    public static final String USERNAME = "root";  //editable
+    public static final String PASSWORD = "";      //editable
+
+    //Building connection to connect to database
+    protected Connection getConnection(String dbURL, String userName, String password) {
+        Connection conn = null;
+        try {
+            Class.forName(DRIVER_CLASS);
+            conn = DriverManager.getConnection(dbURL, userName, password);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return conn;
+    }
 
     @BeforeTest
     public void setUp() {

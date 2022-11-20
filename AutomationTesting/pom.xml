@@ -16,6 +16,7 @@
         <selenium.version>4.6.0</selenium.version>
         <testng.version>6.9.5</testng.version>
         <web-driver-manager.version>5.3.1</web-driver-manager.version>
+        <mysqlConnector-version>8.0.11</mysqlConnector-version>
     </properties>
 
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -110,6 +111,13 @@
             <artifactId>selenium-support</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysqlConnector-version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>
