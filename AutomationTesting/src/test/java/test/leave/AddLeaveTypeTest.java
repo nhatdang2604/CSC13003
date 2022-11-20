@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import test.auth.BaseTest;
+import utils.ExcelReader;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -30,21 +31,19 @@ public class AddLeaveTypeTest extends BaseTest {
     private static final String ADD_LEAVE_TYPE_URL = BaseTest.BASE_URL + "/leave/defineLeaveType";
 
 
-    @Test
-    public void addLeaveTest() throws SQLException, InterruptedException {
-
-        String[] dummyData = {"test hehe10", "0"};
+    @Test(dataProviderClass = ExcelReader.class, dataProvider = ExcelReader.DATASET_NAME)
+    public void addLeaveTest(String[] testRecord) throws SQLException, InterruptedException {
 
         //Find and wait for the appearance of the leave type name text field,
         // then fill it with the given data.
         driver.get(ADD_LEAVE_TYPE_URL);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LEAVE_TYPE_NAME_XPATH)));
-        driver.findElement(By.xpath(LEAVE_TYPE_NAME_XPATH)).sendKeys(dummyData[0]);
+        driver.findElement(By.xpath(LEAVE_TYPE_NAME_XPATH)).sendKeys(testRecord[0]);
 
         //Find and wait for the appearance of the entitlement situtation radio BoxIndexbutton,
         //  then click the button base on the value of raido.
-        int radioBoxIndex = Integer.parseInt(dummyData[1].trim());
+        int radioBoxIndex = Integer.parseInt(testRecord[1].trim());
         WebElement element = null;
         if (ENTITLEMENT_SITUATION_YES_IDX == radioBoxIndex) {
             element =
@@ -73,7 +72,7 @@ public class AddLeaveTypeTest extends BaseTest {
         String sql =
                 "SELECT 1 " +
                 "FROM ohrm_leave_type " +
-                "WHERE name = '" + dummyData[0] + "' AND exclude_in_reports_if_no_entitlement = " + dummyData[1];
+                "WHERE name = '" + testRecord[0] + "' AND exclude_in_reports_if_no_entitlement = " + testRecord[1];
         ResultSet resultSet = statement.executeQuery(sql);
         Integer result = null;
         while (resultSet.next()) {
