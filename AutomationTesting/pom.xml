@@ -17,6 +17,7 @@
         <testng.version>6.9.5</testng.version>
         <web-driver-manager.version>5.3.1</web-driver-manager.version>
         <mysqlConnector-version>8.0.11</mysqlConnector-version>
+        <apache-poi.version>5.2.3</apache-poi.version>
     </properties>
 
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -116,6 +117,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysqlConnector-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apache-poi.version}</version>
         </dependency>
 
     </dependencies>
