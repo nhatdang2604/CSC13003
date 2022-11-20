@@ -1,10 +1,11 @@
 package test.leave;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import test.auth.BaseTest;
 import utils.ExcelReader;
@@ -30,20 +31,22 @@ public class AddLeaveTypeTest extends BaseTest {
 
     private static final String ADD_LEAVE_TYPE_URL = BaseTest.BASE_URL + "/leave/defineLeaveType";
 
+    //Expected output id
+    private static final int NO_ERROR_OUTPUT_ID = 0;
 
     @Test(dataProviderClass = ExcelReader.class, dataProvider = ExcelReader.DATASET_NAME)
-    public void addLeaveTest(String[] testRecord) throws SQLException, InterruptedException {
+    public void addLeaveTypeTest(String[] testRecord) throws SQLException, InterruptedException {
 
         //Find and wait for the appearance of the leave type name text field,
         // then fill it with the given data.
         driver.get(ADD_LEAVE_TYPE_URL);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LEAVE_TYPE_NAME_XPATH)));
-        driver.findElement(By.xpath(LEAVE_TYPE_NAME_XPATH)).sendKeys(testRecord[0]);
+        driver.findElement(By.xpath(LEAVE_TYPE_NAME_XPATH)).sendKeys(testRecord[1]);
 
         //Find and wait for the appearance of the entitlement situtation radio BoxIndexbutton,
         //  then click the button base on the value of raido.
-        int radioBoxIndex = Integer.parseInt(testRecord[1].trim());
+        int radioBoxIndex = Integer.parseInt(testRecord[2].trim());
         WebElement element = null;
         if (ENTITLEMENT_SITUATION_YES_IDX == radioBoxIndex) {
             element =
@@ -62,29 +65,36 @@ public class AddLeaveTypeTest extends BaseTest {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
 
-        //Sleep the thread, waiting for the system to save the leave type to database first
-        Thread.sleep(1000L);
+        //Get the expected output to use the exact validation for each type
+        int expectedOutputId = Integer.parseInt(testRecord[3].trim());
 
-        //Validate the appearence of the leave type on the database
-        //  by query to the database
-        Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
-        Statement statement = connection.createStatement();
-        String sql =
-                "SELECT 1 " +
-                "FROM ohrm_leave_type " +
-                "WHERE name = '" + testRecord[0] + "' AND exclude_in_reports_if_no_entitlement = " + testRecord[1];
-        ResultSet resultSet = statement.executeQuery(sql);
-        Integer result = null;
-        while (resultSet.next()) {
-            result = resultSet.getInt(1);
+        if (NO_ERROR_OUTPUT_ID == expectedOutputId) {
+            //Sleep the thread, waiting for the system to save the leave type to database first
+            Thread.sleep(1000L);
+
+            //Validate the appearence of the leave type on the database
+            //  by query to the database
+            Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
+            Statement statement = connection.createStatement();
+            String sql =
+                    "SELECT 1 " +
+                            "FROM ohrm_leave_type " +
+                            "WHERE name = '" + testRecord[1] + "' AND exclude_in_reports_if_no_entitlement = " + testRecord[2];
+            ResultSet resultSet = statement.executeQuery(sql);
+            Integer result = null;
+            while (resultSet.next()) {
+                result = resultSet.getInt(1);
+            }
+            resultSet.close();
+            statement.close();
+            Assert.assertNotNull(result);
+
+            //Validate if the successful toast appeared
+            element = driver.findElement(By.className(SUCCESSFUL_TOAST_CLASS));
+            wait.until(ExpectedConditions.visibilityOf(element));
         }
-        resultSet.close();
-        statement.close();
-        Assert.assertNotNull(result);
 
-        //Validate if the successful toast appeared
-        element = driver.findElement(By.className(SUCCESSFUL_TOAST_CLASS));
-        wait.until(ExpectedConditions.visibilityOf(element));
+
 
     }
 

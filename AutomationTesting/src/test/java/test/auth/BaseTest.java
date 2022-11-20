@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 import java.time.Duration;
 
 public class BaseTest {
@@ -56,6 +56,20 @@ public class BaseTest {
         driver.findElement(By.cssSelector("input[name='username']")).sendKeys("admin");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("Dangkl123812010@");
         driver.findElement(By.className("orangehrm-login-button")).click();
+    }
+
+    @AfterTest
+    public void tearDown() throws SQLException {
+
+        //Delete data from orhm_leave_type table
+        Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
+        Statement statement = connection.createStatement();
+        String sql =
+                "DELETE " +
+                "FROM ohrm_leave_type";
+        ResultSet resultSet = statement.executeQuery(sql);
+        resultSet.close();
+        statement.close();
     }
 
 }

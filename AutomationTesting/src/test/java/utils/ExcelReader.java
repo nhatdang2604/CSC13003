@@ -10,9 +10,10 @@ import java.lang.reflect.Method;
 public class ExcelReader {
 
     public static final String DATASET_NAME = "dataset";
-    private static final String DATASET_PATH = "src/main/resources/" + DATASET_NAME + "xlsx";
+//    private static final String DATASET_PATH = DATASET_NAME + ".xlsx";
+    private static final String DATASET_PATH = "./src/main/resources/" + DATASET_NAME + ".xlsx";
 
-    @DataProvider(name="dataset")
+    @DataProvider(name=DATASET_NAME)
     public String[][] getData(Method m) throws Exception {
 
         //Open file;
