@@ -27,12 +27,15 @@ public class AddLeaveTypeTest extends BaseTest {
     private static final String ENTITLEMENT_SITUTATION_YES_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div/div/div[2]/div[1]/div[2]/div/label/span";
     private static final String ENTITLEMENT_SITUTATION_NO_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div/div/div[2]/div[2]/div[2]/div/label/span";
     private static final String SAVE_BUTTON_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]";
+    private static final String ALREADY_EXISTED_ERROR_TEXT_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/span";
     private static final String SUCCESSFUL_TOAST_CLASS = "oxd-toast";
 
     private static final String ADD_LEAVE_TYPE_URL = BaseTest.BASE_URL + "/leave/defineLeaveType";
 
     //Expected output id
     private static final int NO_ERROR_OUTPUT_ID = 0;
+    private static final int LEAVE_NAME_EXISTED_ERROR_ID = 1;
+    private static final int REQUIRE_NAME_ERROR_ID = 2;
 
     @Test(dataProviderClass = ExcelReader.class, dataProvider = ExcelReader.DATASET_NAME)
     public void addLeaveTypeTest(String[] testRecord) throws SQLException, InterruptedException {
@@ -69,6 +72,7 @@ public class AddLeaveTypeTest extends BaseTest {
         int expectedOutputId = Integer.parseInt(testRecord[3].trim());
 
         if (NO_ERROR_OUTPUT_ID == expectedOutputId) {
+
             //Sleep the thread, waiting for the system to save the leave type to database first
             Thread.sleep(1000L);
 
@@ -92,6 +96,23 @@ public class AddLeaveTypeTest extends BaseTest {
             //Validate if the successful toast appeared
             element = driver.findElement(By.className(SUCCESSFUL_TOAST_CLASS));
             wait.until(ExpectedConditions.visibilityOf(element));
+
+        } else if (LEAVE_NAME_EXISTED_ERROR_ID == expectedOutputId) {
+
+            //Validate if the "Already exists" text pop out
+            element = driver.findElement(By.xpath(ALREADY_EXISTED_ERROR_TEXT_XPATH));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            String errorMessage = element.getAttribute("innerHTML");
+            Assert.assertEquals(errorMessage, "Already exists");
+
+        } else if (REQUIRE_NAME_ERROR_ID == expectedOutputId) {
+
+            //Validate if the "Required" text pop out
+            element = driver.findElement(By.xpath(ALREADY_EXISTED_ERROR_TEXT_XPATH));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            String errorMessage = element.getAttribute("innerHTML");
+            Assert.assertEquals(errorMessage, "Required");
+
         }
 
 

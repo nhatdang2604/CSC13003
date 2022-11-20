@@ -67,8 +67,7 @@ public class BaseTest {
         String sql =
                 "DELETE " +
                 "FROM ohrm_leave_type";
-        ResultSet resultSet = statement.executeQuery(sql);
-        resultSet.close();
+        statement.executeUpdate(sql);
         statement.close();
     }
 

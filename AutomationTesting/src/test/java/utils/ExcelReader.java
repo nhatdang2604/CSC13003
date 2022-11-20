@@ -24,16 +24,16 @@ public class ExcelReader {
         Sheet sheet = workbook.getSheet(sheetName);
 
         //Get row and col
-        int totalRows = sheet.getLastRowNum();
+        int totalRows = sheet.getPhysicalNumberOfRows();
         Row row = sheet.getRow(0);
         int totalCols = row.getLastCellNum();
 
         //Read data and parse to array
         DataFormatter formatter = new DataFormatter();
-        String[][] data = new String[totalRows][totalCols];
-        for (int i = 1; i <= totalRows; ++i) {
-            for (int j = 1; j <= totalCols; ++j) {
-                data[i-1][j-1] = formatter.formatCellValue(sheet.getRow(i).getCell(j));
+        String[][] data = new String[totalRows - 1][totalCols];
+        for (int i = 0; i < totalRows - 1; ++i) {
+            for (int j = 0; j < totalCols; ++j) {
+                data[i][j] = formatter.formatCellValue(sheet.getRow(i + 1).getCell(j));
             }
         }
 
