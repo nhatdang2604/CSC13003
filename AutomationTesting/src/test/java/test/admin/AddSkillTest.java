@@ -69,10 +69,10 @@ public class AddSkillTest extends BaseTest {
 
         if (NO_ERROR_OUTPUT_ID == expectedOutputId) {
 
-            //Sleep the thread, waiting for the system to save the leave type to database first
+            //Sleep the thread, waiting for the system to save the skill to database first
             Thread.sleep(1000L);
 
-            //Validate the appearence of the leave type on the database
+            //Validate the appearence of the skill on the database
             //  by query to the database
             Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
             Statement statement = connection.createStatement();

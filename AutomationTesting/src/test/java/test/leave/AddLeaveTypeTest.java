@@ -16,6 +16,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class AddLeaveTypeTest extends BaseTest {
@@ -28,7 +30,10 @@ public class AddLeaveTypeTest extends BaseTest {
     private static final String ENTITLEMENT_SITUTATION_YES_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div/div/div[2]/div[1]/div[2]/div/label/span";
     private static final String ENTITLEMENT_SITUTATION_NO_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div/div/div[2]/div[2]/div[2]/div/label/span";
     private static final String SAVE_BUTTON_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]";
-    private static final String ALREADY_EXISTED_ERROR_TEXT_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/span";
+//    private static final String ALREADY_EXISTED_ERROR_TEXT_XPATH = "/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/span";
+
+    private static final String ERROR_TEXT_CLASS = "oxd-input-field-error-message";
+
     private static final String SUCCESSFUL_TOAST_CLASS = "oxd-toast";
 
     private static final String ADD_LEAVE_TYPE_URL = BaseTest.BASE_URL + "/leave/defineLeaveType";
@@ -102,26 +107,20 @@ public class AddLeaveTypeTest extends BaseTest {
         } else if (LEAVE_NAME_EXISTED_ERROR_ID == expectedOutputId) {
 
             //Validate if the "Already exists" text pop out
-            element = driver.findElement(By.xpath(ALREADY_EXISTED_ERROR_TEXT_XPATH));
-            wait.until(ExpectedConditions.visibilityOf(element));
-            String errorMessage = element.getAttribute("innerHTML");
-            Assert.assertEquals(errorMessage, "Already exists");
+            List<String> errorMessages = Arrays.asList("Already exists");
+            assertErrorTextWithGivenText(ERROR_TEXT_CLASS, errorMessages, wait);
 
         } else if (REQUIRE_NAME_ERROR_ID == expectedOutputId) {
 
             //Validate if the "Required" text pop out
-            element = driver.findElement(By.xpath(ALREADY_EXISTED_ERROR_TEXT_XPATH));
-            wait.until(ExpectedConditions.visibilityOf(element));
-            String errorMessage = element.getAttribute("innerHTML");
-            Assert.assertEquals(errorMessage, "Required");
+            List<String> errorMessages = Arrays.asList("Required");
+            assertErrorTextWithGivenText(ERROR_TEXT_CLASS, errorMessages, wait);
 
         } else if (LEAVE_NAME_TOO_LONG_ERROR_ID == expectedOutputId) {
 
             //Validate if the "Should not exceed 50 characters" text pop out
-            element = driver.findElement(By.xpath(ALREADY_EXISTED_ERROR_TEXT_XPATH));
-            wait.until(ExpectedConditions.visibilityOf(element));
-            String errorMessage = element.getAttribute("innerHTML");
-            Assert.assertEquals(errorMessage, "Should not exceed 50 characters");
+            List<String> errorMessages = Arrays.asList("Should not exceed 50 characters");
+            assertErrorTextWithGivenText(ERROR_TEXT_CLASS, errorMessages, wait);
         }
 
     }
