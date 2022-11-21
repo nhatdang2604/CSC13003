@@ -37,6 +37,7 @@ public class AddLeaveTypeTest extends BaseTest {
     private static final int NO_ERROR_OUTPUT_ID = 0;
     private static final int LEAVE_NAME_EXISTED_ERROR_ID = 1;
     private static final int REQUIRE_NAME_ERROR_ID = 2;
+    private static final int LEAVE_NAME_TOO_LONG_ERROR_ID = 3;
 
     @Test(dataProviderClass = ExcelReader.class, dataProvider = ExcelReader.DATASET_NAME)
     public void addLeaveTypeTest(String[] testRecord) throws SQLException, InterruptedException {
@@ -114,6 +115,13 @@ public class AddLeaveTypeTest extends BaseTest {
             String errorMessage = element.getAttribute("innerHTML");
             Assert.assertEquals(errorMessage, "Required");
 
+        } else if (LEAVE_NAME_TOO_LONG_ERROR_ID == expectedOutputId) {
+
+            //Validate if the "Should not exceed 50 characters" text pop out
+            element = driver.findElement(By.xpath(ALREADY_EXISTED_ERROR_TEXT_XPATH));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            String errorMessage = element.getAttribute("innerHTML");
+            Assert.assertEquals(errorMessage, "Should not exceed 50 characters");
         }
 
     }

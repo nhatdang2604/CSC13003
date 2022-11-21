@@ -3,14 +3,18 @@ package test.auth;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.sql.*;
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 
 public class BaseTest {
 
@@ -44,6 +48,16 @@ public class BaseTest {
         return conn;
     }
 
+    protected void assertErrorTextWithGivenText(String errorTextClass, List<String> givenText, WebDriverWait wait) {
+        List<WebElement> elements = driver.findElements(By.className(errorTextClass));
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+        int size = elements.size();
+        for (int i = 0; i < size; ++i) {
+            String errorMessage = elements.get(i).getAttribute("innerHTML");
+            Assert.assertEquals(errorMessage, givenText.get(i));
+        }
+    }
+
     @BeforeTest
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -58,6 +72,9 @@ public class BaseTest {
         driver.findElement(By.className("orangehrm-login-button")).click();
     }
 
-
+    @AfterTest
+    public void closeDriver() {
+        driver.close();
+    }
 
 }
