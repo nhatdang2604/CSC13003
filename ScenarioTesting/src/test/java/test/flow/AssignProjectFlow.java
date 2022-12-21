@@ -1,36 +1,45 @@
 package test.flow;
 
 //import junit.framework.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.auth.BaseTest;
+import test.flow.customer.CustomerFlow;
+import test.flow.project.ProjectFlow;
 import utils.ExcelReader;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.Duration;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class AssignProjectFlow extends BaseTest {
 
-    @Test(dataProviderClass = ExcelReader.class, dataProvider = ExcelReader.DATASET_NAME)
-    public void addLeaveTypeTest(String[] testRecord) throws SQLException, InterruptedException {
+    private CustomerFlow customerFlow;
+    private ProjectFlow projectFlow;
+    @BeforeMethod
+    private void init() {
+        customerFlow = new CustomerFlow(driver, wait);
+        projectFlow = new ProjectFlow(driver, wait);
+    }
 
-        //TODO:
+    @Test(dataProviderClass = ExcelReader.class, dataProvider = ExcelReader.DATASET_NAME)
+    public void assignProjectTest(String[] testRecord) throws Exception {
+
+        customerFlow.createCustomer(testRecord);
+//        projectFlow.createProject();
     }
 
     @AfterTest
-    public void tearDown() throws SQLException {
-        //TODO:
+    public void tearDown() throws Exception {
+
+        Connection connection = getConnection(CONNECTION_STR, USERNAME, PASSWORD);
+        Statement statement = connection.createStatement();
+
+        customerFlow.clear(statement);
+
+        statement.close();
     }
 
 }

@@ -25,6 +25,7 @@ import static utils.ExcelReader.RESOURCE_PATH;
 public class BaseTest {
 
     protected WebDriver driver;
+    protected WebDriverWait wait;
 
     private static final String IP = "localhost";
     private static final String PORT = "8088";
@@ -88,7 +89,7 @@ public class BaseTest {
     //Login with administration account
     private void login() {
         driver.get(LOGIN_URL);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[name='username']")));
 
         driver.findElement(By.cssSelector("input[name='username']")).sendKeys("admin");
