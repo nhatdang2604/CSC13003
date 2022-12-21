@@ -11,14 +11,14 @@ public class ExcelReader {
 
     public static final String DATASET_NAME = "dataset";
 //    private static final String DATASET_PATH = DATASET_NAME + ".xlsx";
-    private static final String DATASET_PATH = "./src/main/resources/" + DATASET_NAME + ".xlsx";
 
-    @DataProvider(name=DATASET_NAME)
-    public String[][] getData(Method m) throws Exception {
+    public static final String RESOURCE_PATH = "./src/main/resources/";
+    public static final String DATASET_PATH = RESOURCE_PATH + DATASET_NAME + ".xlsx";
 
-        //Open file;
-        String sheetName = m.getName();
-        File file = new File(DATASET_PATH);
+    //Read data from an Excel file with 'path' and 'sheet name'
+    public String[][] getData(String path, String sheetName) throws Exception  {
+
+        File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
         Workbook workbook = WorkbookFactory.create(fis);
         Sheet sheet = workbook.getSheet(sheetName);
@@ -38,6 +38,15 @@ public class ExcelReader {
         }
 
         return data;
+    }
+
+    @DataProvider(name=DATASET_NAME)
+    public String[][] getData(Method m) throws Exception {
+
+        //Open file;
+        String sheetName = m.getName();
+        String[][] result = getData(DATASET_PATH, sheetName);
+        return result;
     }
 
 }
